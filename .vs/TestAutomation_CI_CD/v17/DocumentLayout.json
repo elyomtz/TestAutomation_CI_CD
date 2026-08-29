@@ -148,7 +148,7 @@
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\elyom\\Documents\\ElyoFiles\\EPAM\\Specialization\\Module08\\TestAutomation_CI_CD\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-08-29T22:11:22.541Z",
               "EditorCaption": ""
@@ -163,8 +163,7 @@
               "RelativeToolTip": "log4net.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-08-29T21:28:29.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-29T21:28:29.953Z"
             },
             {
               "$type": "Document",
@@ -176,8 +175,7 @@
               "RelativeToolTip": "Core\\API_Test_Core\\ApiClient.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAACIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T01:36:51.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-29T01:36:51.658Z"
             },
             {
               "$type": "Document",
@@ -189,8 +187,7 @@
               "RelativeToolTip": "Tests\\FileDownloadTest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T02:16:11.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-29T02:16:11.373Z"
             },
             {
               "$type": "Document",
@@ -214,8 +211,7 @@
               "RelativeToolTip": "Core\\Configuration\\TestSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T01:05:24.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-29T01:05:24.051Z"
             },
             {
               "$type": "Document",
@@ -227,8 +223,7 @@
               "RelativeToolTip": "Core\\Driver\\DriverFactory.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwCkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T01:08:39.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-29T01:08:39.737Z"
             },
             {
               "$type": "Document",
@@ -240,8 +235,7 @@
               "RelativeToolTip": "Core\\Pages\\FileDownload.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAASwDgAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T01:23:55.826Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-29T01:23:55.826Z"
             },
             {
               "$type": "Document",
@@ -301,8 +295,7 @@
               "RelativeToolTip": "Core\\Configuration\\Enums.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T01:05:02.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-29T01:05:02.378Z"
             },
             {
               "$type": "Document",
