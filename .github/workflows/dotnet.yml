@@ -37,6 +37,10 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore TestAutomation_CI_CD.sln
+        
+      - name: Build
+        run: dotnet build TestGithubActions.sln --configuration Release --no-restore
+
 
  # Manual: Unit
       # Manual: All
