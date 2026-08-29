@@ -3,6 +3,7 @@
     public class TestSettings
     {
         public string Url { get; set; } = string.Empty;
+        public bool Headless { get; set; }
         public BrowserType Browser { get; set; }
         public int TimeoutSeconds { get; set; }
         public string FileName { get; set; } = string.Empty;
