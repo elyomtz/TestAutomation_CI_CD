@@ -72,11 +72,12 @@ jobs:
       # Manual: All
       # Schedule at 07:00
       - name: Run API Tests
-        run: dotnet test --filter "TestCategory=API"
- #       if: |
- #         github.event_name == 'schedule' && github.event.schedule == '0 7 * * *' ||
- #         github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Api' || inputs.test_type == 'All')
- #       run: |
+        #run: dotnet test --filter "TestCategory=API"
+        if: |
+          github.event_name == 'schedule' && github.event.schedule == '0 7 * * *' ||
+          github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Api' || inputs.test_type == 'All')
+        run: dotnet test --filter "TestCategory=API" --configuration Release --no-build
+ 
  #         dotnet test \
 #            --configuration Release \
 #            --no-build \
