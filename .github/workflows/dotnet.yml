@@ -21,14 +21,14 @@ on:
           - All
         default: Unit
 
-  schedule:
+ # schedule:
     # API tests: every day at 20:00 Mexico City time
-    - cron: '0 20 * * *'
-      timezone: 'America/Mexico_City'
+ #   - cron: '0 20 * * *'
+ #     timezone: 'America/Mexico_City'
       
     # Unit tests: every day at 21:00 Mexico City time
-    - cron: '0 21 * * *'
-      timezone: 'America/Mexico_City'
+ #   - cron: '0 21 * * *'
+ #     timezone: 'America/Mexico_City'
 
 jobs:
   build:
