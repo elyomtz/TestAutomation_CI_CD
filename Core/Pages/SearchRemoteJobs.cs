@@ -68,7 +68,7 @@ namespace TestAutomation_CI_CD.Core.Pages
                 WaitAndClick(remoteCheckbox);
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }

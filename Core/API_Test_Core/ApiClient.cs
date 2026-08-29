@@ -14,7 +14,7 @@ namespace TestAutomation_CI_CD.Core.API_Test_Core
         {
             _client = new RestClient(baseUrl);
         }
-
+#pragma warning disable CS8714
         public async Task<RestResponse<T>> GetAsync<T>(string endpoint)
         {
             logger.Info("Creating GET request");
@@ -32,6 +32,6 @@ namespace TestAutomation_CI_CD.Core.API_Test_Core
 
             return await _client.ExecuteAsync<TResponse>(request);
         }
-
+#pragma warning restore CS8714
     }
 }

@@ -35,8 +35,6 @@ namespace TestAutomation_CI_CD.Core.Pages
 
         public IReadOnlyCollection<IWebElement> WaitForElementsVisible(By locator)
         {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
             return wait.Until(d =>
             {
                 var elements = d.FindElements(locator);
@@ -105,7 +103,7 @@ namespace TestAutomation_CI_CD.Core.Pages
                     elemToFound.Click();
                     break;
                 }
-                catch (Exception ex)
+                catch
                 {
                     attempts++;
                 }

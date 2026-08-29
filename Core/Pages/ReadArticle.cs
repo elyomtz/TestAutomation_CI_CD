@@ -42,6 +42,10 @@ namespace TestAutomation_CI_CD.Core.Pages
             return counter;
         }
 
+#pragma warning disable CS8600
+#pragma warning disable CS8604
+#pragma warning disable CS8619
+
         public List<string> GetSlidesTexts()
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
@@ -114,5 +118,8 @@ namespace TestAutomation_CI_CD.Core.Pages
 
             return false;
         }
+#pragma warning restore CS8600
+#pragma warning restore CS8604
+#pragma warning restore CS8619
     }
 }
