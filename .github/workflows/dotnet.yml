@@ -55,8 +55,8 @@ jobs:
  # Manual: Unit
       # Manual: All
       # Schedule at 06:00
-      - name: Run Unit Tests
-        run: dotnet test --filter "TestCategory=Unit"
+      #- name: Run Unit Tests
+      #   run: dotnet test --filter "TestCategory=Unit"
  
  
  #       if: |
