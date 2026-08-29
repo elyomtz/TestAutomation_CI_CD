@@ -21,10 +21,13 @@ on:
           - All
         default: Unit
 
- # schedule:
+  schedule:
+    # API tests: every day at 07:00 UTC
+    - cron: '0 7 * * *'
+    
     # API tests: every day at 20:00 Mexico City time
- #   - cron: '0 20 * * *'
- #     timezone: 'America/Mexico_City'
+#    - cron: '0 20 * * *'
+#      timezone: 'America/Mexico_City'
       
     # Unit tests: every day at 21:00 Mexico City time
  #   - cron: '0 21 * * *'
@@ -50,21 +53,30 @@ jobs:
 
       - name: Build
         run: dotnet build TestAutomation_CI_CD.sln --configuration Release --no-restore
-
-     # Manual: Unit
-     # Manual: All
-     # Schedule at 20:00
-     - name: Run Unit Tests
-       if: |
-         github.event_name == 'schedule' && github.event.schedule == '0 20 * * *' ||
-         github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Unit' || inputs.test_type == 'All')
-       run: dotnet test --filter "TestCategory=Unit" --configuration Release --no-build
-
-    # Manual: API
-    # Manual: All
-    # Schedule at 07:00
-      - name: Run API Tests
+        
+        
+        #run: dotnet test --filter "TestCategory=API"
         if: |
           github.event_name == 'schedule' && github.event.schedule == '0 7 * * *' ||
           github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Api' || inputs.test_type == 'All')
         run: dotnet test --filter "TestCategory=API" --configuration Release --no-build
+ 
+        
+
+     # Manual: Unit
+     # Manual: All
+     # Schedule at 20:00
+ #    - name: Run Unit Tests
+ #      if: |
+ #        github.event_name == 'schedule' && github.event.schedule == '0 20 * * *' ||
+ #        github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Unit' || inputs.test_type == 'All')
+ #      run: dotnet test --filter "TestCategory=Unit" --configuration Release --no-build
+
+    # Manual: API
+    # Manual: All
+    # Schedule at 07:00
+#      - name: Run API Tests
+#        if: |
+#          github.event_name == 'schedule' && github.event.schedule == '0 21 * * *' ||
+#          github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Api' || inputs.test_type == 'All')
+#        run: dotnet test --filter "TestCategory=API" --configuration Release --no-build
