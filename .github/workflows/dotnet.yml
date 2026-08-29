@@ -1,0 +1,36 @@
+name: .NET Build and Test
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore TestAutomation_CI_CD.sln
+
+      - name: Build
+        run: dotnet build TestAutomation_CI_CD.sln --configuration Release --no-restore
+
+ #     - name: Run tests
+ #       run: dotnet test TestAutomation_CI_CD.sln --configuration Release --no-build
