@@ -1,0 +1,65 @@
+name: .NET Build and Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_type:
+        description: 'Which tests should run?'
+        required: true
+        type: choice
+        options:
+          - Unit
+          - Api
+          - All
+        default: Unit
+
+  schedule:
+    # Unit tests: every day at 06:00 UTC
+    - cron: '0 6 * * *'
+
+    # API tests: every day at 07:00 UTC
+    - cron: '0 7 * * *'
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore TestAutomation_CI_CD.sln
+
+ # Manual: Unit
+      # Manual: All
+      # Schedule at 06:00
+      - name: Run Unit Tests
+        if: |
+          github.event_name == 'schedule' && github.event.schedule == '0 6 * * *' ||
+          github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Unit' || inputs.test_type == 'All')
+        run: |
+          dotnet test \
+            --configuration Release \
+            --no-build \
+            --filter "TestCategory=Unit"
+
+      # Manual: API
+      # Manual: All
+      # Schedule at 07:00
+      - name: Run API Tests
+        if: |
+          github.event_name == 'schedule' && github.event.schedule == '0 7 * * *' ||
+          github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Api' || inputs.test_type == 'All')
+        run: |
+          dotnet test \
+            --configuration Release \
+            --no-build \
+            --filter "TestCategory=Api"
