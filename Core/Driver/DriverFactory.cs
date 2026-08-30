@@ -19,6 +19,7 @@ namespace TestAutomation_CI_CD.Core.Driver
             if (headless)
             {
                 chromeOptions.AddArgument("--headless=new");
+                chromeOptions.AddArgument("--window-size=1920,1080");
             }
             chromeOptions.AddUserProfilePreference("download.default_directory", downloadFolder);
             chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
@@ -29,7 +30,8 @@ namespace TestAutomation_CI_CD.Core.Driver
             var edgeOptions = new EdgeOptions();
             if (headless)
             {
-                chromeOptions.AddArgument("--headless=new");
+                edgeOptions.AddArgument("--headless=new");
+                edgeOptions.AddArgument("--window-size=1920,1080");
             }
             edgeOptions.AddUserProfilePreference("download.default_directory", downloadFolder);
             edgeOptions.AddUserProfilePreference("download.prompt_for_download", false);
@@ -40,7 +42,9 @@ namespace TestAutomation_CI_CD.Core.Driver
             var firefoxOptions = new FirefoxOptions();
             if (headless)
             {
-                chromeOptions.AddArgument("--headless");
+                firefoxOptions.AddArgument("--headless");
+                firefoxOptions.AddArgument("--width=1920");
+                firefoxOptions.AddArgument("--height=1080");
             }
             firefoxOptions.SetPreference("browser.download.folderList", 2);
             firefoxOptions.SetPreference("browser.download.dir", downloadFolder);

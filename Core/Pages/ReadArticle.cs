@@ -108,10 +108,10 @@ namespace TestAutomation_CI_CD.Core.Pages
 
                 foreach (var elemInsights in textsSlidesInsights)
                 {
-
                     if (text.Contains(elemInsights) || elemInsights.Contains(text))
                     {
-                        return true;
+                        //return true;
+                        return false;
                     }
                 }
             }
