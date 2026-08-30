@@ -1,7 +1,7 @@
 ﻿using log4net;
 using OpenQA.Selenium;
-using TestAutomation_CI_CD.Core.Logger;
 using TestAutomation_CI_CD.Core.Configuration;
+using TestAutomation_CI_CD.Core.Logger;
 
 namespace TestAutomation_CI_CD.Core.Pages
 {

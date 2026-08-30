@@ -19,12 +19,9 @@ namespace TestAutomation_CI_CD.Core.Screenshot
             //    Directory.CreateDirectory(screenshotsStorage);
             //}
 
-            var screenshotsStorage = Path.Combine(
-        TestContext.CurrentContext.WorkDirectory,
-        "TestResults\\Screenshots");
+            var screenshotsStorage = Path.Combine(TestContext.CurrentContext.WorkDirectory,"TestResults\\Screenshots");
 
             Directory.CreateDirectory(screenshotsStorage);
-
 
             var screenshotDriver = (ITakesScreenshot)driver;
             var screenshot = screenshotDriver.GetScreenshot();
