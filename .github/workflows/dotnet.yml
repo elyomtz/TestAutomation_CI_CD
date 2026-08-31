@@ -65,6 +65,10 @@ jobs:
         
         #run: dotnet test --filter "TestCategory=API"
       - name: Run API Tests
+        env:
+          BROWSER: ${{ inputs.browser }}
+          HEADLESS: true
+          
         if: |
           github.event_name == 'schedule' && github.event.schedule == '0 7 * * *' ||
           github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Api' || inputs.test_type == 'All')
