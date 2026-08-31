@@ -20,6 +20,15 @@ on:
           - Api
           - All
         default: Unit
+       browser:
+        description: 'Browser to execute tests'
+        required: true
+        type: choice
+        default: chrome
+        options:
+          - chrome
+          - edge
+          - firefox
 
   schedule:
     # API tests: every day at 07:00 UTC
