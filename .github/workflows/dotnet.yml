@@ -22,7 +22,7 @@ on:
           - All
         default: Unit
         
-       browser:
+      browser:
         description: 'Browser to execute tests'
         required: true
         type: choice
