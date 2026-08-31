@@ -11,6 +11,7 @@ on:
 
   workflow_dispatch:
     inputs:
+    
       test_type:
         description: 'Which tests should run?'
         required: true
@@ -20,6 +21,7 @@ on:
           - Api
           - All
         default: Unit
+        
        browser:
         description: 'Browser to execute tests'
         required: true
