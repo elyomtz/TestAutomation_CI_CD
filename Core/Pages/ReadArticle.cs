@@ -110,8 +110,7 @@ namespace TestAutomation_CI_CD.Core.Pages
                 {
                     if (text.Contains(elemInsights) || elemInsights.Contains(text))
                     {
-                        //return true;
-                        return false;
+                        return true;
                     }
                 }
             }
