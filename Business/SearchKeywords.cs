@@ -26,18 +26,32 @@ namespace TestAutomation_CI_CD.Business
 
         public void SearchKeywordsService(string keyword1, string keyword2, string keyword3)
         {
-            try
-            {
+            //try
+            //{
+ //////////////////////////////
+
+                var screenshotsStorage = Path.Combine(TestContext.CurrentContext.WorkDirectory, "TestResults\\Screenshots");
+
+                Directory.CreateDirectory(screenshotsStorage);
+
+                var screenshotDriver = (ITakesScreenshot)driver;
+                var screenshot = screenshotDriver.GetScreenshot();
+                var fileName = "SearchKeywordsService.png";
+                var filePath = Path.Combine(Path.Combine(screenshotsStorage), fileName);
+
+/////////////////////
+
+                screenshot.SaveAsFile(filePath);
                 logger.Info("Navigating to EPAM website");
                 searchKeywords.NavigateToEpam();
                 logger.Info($"Searching for keywords {keyword1}, {keyword2}, {keyword3}");
                 searchKeywords.GlobalSearch(driver, keyword1, keyword2, keyword3);
-            }
-            catch
-            {
-                var screenshot = ScreenshotMaker.Capture("SearchKeywordsService");
-                Logger.Error($"Failure screenshot: {screenshot}");
-            }
+            //}
+            //catch
+            //{
+            //    var screenshot = ScreenshotMaker.Capture("SearchKeywordsService");
+            //    Logger.Error($"Failure screenshot: {screenshot}");
+            //}
         }
 
         public bool ValidateResultsService(string keyword1, string keyword2, string keyword3)
