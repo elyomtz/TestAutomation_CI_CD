@@ -15,7 +15,6 @@ namespace TestAutomation_CI_CD.Business
             this.driver = driver;
             searchRemoteJobs = new Core.Pages.SearchRemoteJobs(driver);
         }
-
         public bool SearchRemoteJobsService(string country, string programmingLanguage)
         {
             logger.Info("Navigating to EPAM website");

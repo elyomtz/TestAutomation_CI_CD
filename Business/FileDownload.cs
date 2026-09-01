@@ -15,7 +15,6 @@ namespace TestAutomation_CI_CD.Business
             this.driver = driver;
             fileDownload = new Core.Pages.FileDownload(driver);
         }
-
         public void FileDownloadService()
         {
             logger.Info("Navigating to EPAM website");

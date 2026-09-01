@@ -4,7 +4,6 @@ namespace TestAutomation_CI_CD.Tests
 {
     public class FileDownloadTest : BaseTest
     {
-
         [Test]
         [Category("Unit")]
         public void TestEpam_FileDownload()

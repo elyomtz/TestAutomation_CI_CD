@@ -64,24 +64,23 @@ jobs:
 
       - name: Build
         run: dotnet build TestAutomation_CI_CD.sln --configuration Release --no-restore
-        
-        
 
-        
-        #run: dotnet test --filter "TestCategory=API"
+
       - name: Run API Tests
         env:
           BROWSER: ${{ inputs.browser }}
           HEADLESS: true
           
+        #run: dotnet test --filter "TestCategory=API"
         if: |
-          github.event_name == 'schedule' && github.event.schedule == '0 7 * * *' ||
+          github.event_name == 'schedule' && github.event.schedule == '0 20 * * *' ||
           github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Api' || inputs.test_type == 'All')
         run: dotnet test --filter "TestCategory=API" --configuration Release --no-build
  
+        #run: dotnet test --filter "TestCategory=API"
       - name: Run Unit Tests
         if: |
-          github.event_name == 'schedule' && github.event.schedule == '0 7 * * *' ||
+          github.event_name == 'schedule' && github.event.schedule == '0 21 * * *' ||
           github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Unit' || inputs.test_type == 'All')
         run: dotnet test --filter "TestCategory=Unit" --configuration Release --no-build
         

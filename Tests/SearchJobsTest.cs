@@ -4,7 +4,6 @@ namespace TestAutomation_CI_CD.Tests
 {
     public class SearchJobsTest : BaseTest
     {
-
         [TestCase("java", "Argentina")]
         [Category("Unit")]
         public void TestEpam_SearchRemoteJob(string programmingLanguage, string country)

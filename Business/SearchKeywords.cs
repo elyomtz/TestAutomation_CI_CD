@@ -31,7 +31,6 @@ namespace TestAutomation_CI_CD.Business
             logger.Info($"Searching for keywords {keyword1}, {keyword2}, {keyword3}");
             searchKeywords.GlobalSearch(driver, keyword1, keyword2, keyword3);
         }
-
         public bool ValidateResultsService(string keyword1, string keyword2, string keyword3)
         {
                 logger.Info("Verifying if keywords are found in the search results");
