@@ -76,7 +76,7 @@ jobs:
           github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Api' || inputs.test_type == 'All')
         run: dotnet test --filter "TestCategory=API" --configuration Release --no-build
  
-        #run: dotnet test --filter "TestCategory=API"
+        #run: dotnet test --filter "TestCategory=Unit"
       - name: Run Unit Tests
         if: |
           github.event_name == 'schedule' && github.event.schedule == '0 06 * * *' ||
