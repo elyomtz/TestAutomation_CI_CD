@@ -6,7 +6,7 @@ using TestAutomation_CI_CD.Core.API_Test_Core.Models;
 namespace TestAutomation_CI_CD.Tests
 {
     [TestFixture]
-    [Category("Api")]
+    [Category("API")]
     public class UsersTests : TestBase
     {
         /*Task 1*/
