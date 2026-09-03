@@ -34,11 +34,11 @@ on:
 
   schedule:  
     # API tests: every day at 20:00 Mexico City time
-    - cron: '0 21 * * *'
+    - cron: '30 21 * * *'
       timezone: 'America/Mexico_City'
       
     # Unit tests: every day at 21:00 Mexico City time
-    - cron: '5 21 * * *'
+    - cron: '05 06 * * *'
       timezone: 'America/Mexico_City'
 
 jobs:
@@ -65,8 +65,8 @@ jobs:
       - name: Run API Tests          
         #run: dotnet test --filter "TestCategory=API"
         if: |
-          github.event_name == 'schedule' && github.event.schedule == '0 21 * * *' ||
-          github.event_name == 'workflow_dispatch' && (inputs.test_type == 'API' || inputs.test_type == 'All')
+          (github.event_name == 'schedule' && github.event.schedule == '30 21 * * *') ||
+          (github.event_name == 'workflow_dispatch' && (inputs.test_type == 'API' || inputs.test_type == 'All'))
         run: dotnet test --filter "TestCategory=API" --configuration Release --no-build
  
         #run: dotnet test --filter "TestCategory=Unit"
@@ -76,8 +76,8 @@ jobs:
           BROWSER: ${{ inputs.browser }}
           
         if: |
-          github.event_name == 'schedule' && github.event.schedule == '5 21 * * *' ||
-          github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Unit' || inputs.test_type == 'All')
+          (github.event_name == 'schedule' && github.event.schedule == '05 06 * * *') ||
+          (github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Unit' || inputs.test_type == 'All'))
         run: dotnet test --filter "TestCategory=Unit" --configuration Release --no-build
         
         
@@ -85,7 +85,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: failed-test-screenshots
+          name: failed-test-screenshots-${{ inputs.browser }}
           path: '**/TestResults/Screenshots/**'
           if-no-files-found: ignore
 
