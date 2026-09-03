@@ -34,7 +34,7 @@ on:
 
   schedule:  
     # API tests: every day at 20:00 Mexico City time
-    - cron: '30 21 * * *'
+    - cron: '45 21 * * *'
       timezone: 'America/Mexico_City'
       
     # Unit tests: every day at 21:00 Mexico City time
@@ -65,7 +65,7 @@ jobs:
       - name: Run API Tests          
         #run: dotnet test --filter "TestCategory=API"
         if: |
-          (github.event_name == 'schedule' && github.event.schedule == '30 21 * * *') ||
+          (github.event_name == 'schedule' && github.event.schedule == '45 21 * * *') ||
           (github.event_name == 'workflow_dispatch' && (inputs.test_type == 'API' || inputs.test_type == 'All'))
         run: dotnet test --filter "TestCategory=API" --configuration Release --no-build
  
