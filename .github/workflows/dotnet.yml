@@ -1,9 +1,9 @@
 name: .NET Build and Test
 
 on:
-#  push:
-#    branches:
-#      - main
+  push:
+    branches:
+      - main
 
   pull_request:
     branches:
@@ -61,12 +61,8 @@ jobs:
 
       - name: Build
         run: dotnet build TestAutomation_CI_CD.sln --configuration Release --no-restore
-
-      - name: Run API Tests
-        env:
-          BROWSER: ${{ inputs.browser }}
-          HEADLESS: true
-          
+        
+      - name: Run API Tests          
         #run: dotnet test --filter "TestCategory=API"
         if: |
           github.event_name == 'schedule' && github.event.schedule == '10 19 * * *' ||
@@ -75,6 +71,10 @@ jobs:
  
         #run: dotnet test --filter "TestCategory=Unit"
       - name: Run Unit Tests
+      
+        env:
+          BROWSER: ${{ inputs.browser }}
+          
         if: |
           github.event_name == 'schedule' && github.event.schedule == '15 19 * * *' ||
           github.event_name == 'workflow_dispatch' && (inputs.test_type == 'Unit' || inputs.test_type == 'All')
